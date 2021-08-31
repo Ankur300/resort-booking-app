@@ -2,12 +2,13 @@ import React from "react";
 import images from "../images/img1.jpg";
 import rupeeicon from "../images/rupee.png";
 import { useHistory } from "react-router-dom";
-import BookingPage from "./BookingPage";
 
 function HomePage() {
     const history = useHistory();
-    const resortbtn = () => {
-        history.push("/BookingPage/");
+    console.log(history);
+    const resortbtn = (event) => {
+        event.preventDefault();
+        history.push("/Booking");
     };
     return (
         <>
