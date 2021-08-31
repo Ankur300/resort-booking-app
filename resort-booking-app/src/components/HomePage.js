@@ -1,7 +1,7 @@
 import React from "react";
 import images from "../images/img1.jpg";
-import rupeeicon from "../images/rupee.png";
 import { useHistory } from "react-router-dom";
+
 
 function HomePage() {
     const history = useHistory();
@@ -21,7 +21,7 @@ function HomePage() {
                 </div>
             </div>
             <div className="resort_cotent container">
-                {/* <h2>Explore for Resort Rooms</h2> */}
+                <h2>Explore for Resort Rooms</h2>
                 <ul className="row">
                     <li className="col-sm-12 col-md-6 col-lg-4">
                         <div className="product-info">
@@ -30,10 +30,7 @@ function HomePage() {
                             </div>
                             <div className="product_price clearfix">
                                 <h3>Single Room</h3>
-                                <label>Price</label>
-                                <span>
-                                    700 <img src={rupeeicon} alt="rupee" />
-                                </span>
+
                                 <button className="btn btn-primary float-end ">
                                     Book Now
                                 </button>
@@ -47,10 +44,7 @@ function HomePage() {
                             </div>
                             <div className="product_price clearfix">
                                 <h3>Double Room</h3>
-                                <label>Price</label>
-                                <span>
-                                    700 <img src={rupeeicon} alt="rupee" />
-                                </span>
+
                                 <button className="btn btn-primary float-end ">
                                     Book Now
                                 </button>
@@ -64,10 +58,7 @@ function HomePage() {
                             </div>
                             <div className="product_price clearfix">
                                 <h3>Family Trip</h3>
-                                <label>Price</label>
-                                <span>
-                                    700 <img src={rupeeicon} alt="rupee" />
-                                </span>
+
                                 <button className="btn btn-primary float-end ">
                                     Book Now
                                 </button>
@@ -75,6 +66,15 @@ function HomePage() {
                         </div>
                     </li>
                 </ul>
+            </div>
+            <div className="container">
+                <section>
+                    <h2>Benifits</h2>
+                    <p>Additional Benifities for Customers booking rooms.</p>
+                    <ul>
+                        <li></li>
+                    </ul>
+                </section>
             </div>
         </>
     );
