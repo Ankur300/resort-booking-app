@@ -1,7 +1,6 @@
 .home_banner, .booking_banner{
     background: url('../images/img1.jpg') no-repeat fixed bottom;
     background-size: cover;
-    padding: 100px;
     text-align: center;
     height: 60vh;
     margin-bottom: 70px;
@@ -21,7 +20,7 @@
     }
     h1{
         color: #000;
-        text-shadow: 1px 1px 2px #fff;
+        text-shadow: 1px 1px 2px #ffffff;
     }
 }
 .resort_cotent{
@@ -35,6 +34,9 @@
                 transition: 0.3s all ease-in-out;  
                 border: 1px solid #ccc; border-radius: 5px;  
                 overflow: hidden;
+                display: block;
+                color: #ffa807;
+                text-decoration: none;
             }
             img{
                 object-fit: contain; 

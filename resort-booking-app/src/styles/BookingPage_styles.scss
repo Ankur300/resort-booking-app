@@ -1,3 +1,8 @@
-.booking_banner{
-    background: url('../images/rooms.jpg') no-repeat fixed bottom;
+.booking_banner {
+    background: url("../images/rooms.jpg") no-repeat fixed bottom;
+    background-size: cover;
+}
+.booking_room .booking_banner {
+    background: url("../images/BookingPageBanner.jpg") no-repeat fixed bottom;
+    background-size: cover;
 }

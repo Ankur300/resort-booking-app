@@ -36,28 +36,28 @@ class Navbar extends React.Component {
                             id="navbarNav"
                         >
                             <ul class="navbar-nav">
-                                <li class="nav-item px-4">
+                                <li class="nav-item px-2">
                                     <NavLink class="nav-link" to="/Login">
                                         Login
                                     </NavLink>
                                 </li>
 
-                                <li class="nav-item px-4">
+                                <li class="nav-item px-2">
                                     <NavLink class="nav-link" to="/Register">
                                         Registration
                                     </NavLink>
                                 </li>
-                                <li class="nav-item px-4">
+                                <li class="nav-item px-2">
                                     <NavLink class="nav-link" to="/Booking">
                                         Book a Resort Room
                                     </NavLink>
                                 </li>
-                                <li class="nav-item px-4">
-                                    <NavLink class="nav-link" to="/bookings">
+                                <li class="nav-item px-2">
+                                    <NavLink class="nav-link" to="/MyBookings">
                                         My Bookings
                                     </NavLink>
                                 </li>
-                                <li class="nav-item px-4">
+                                <li class="nav-item px-2">
                                     <NavLink class="nav-link" to="/ContactUs">
                                         Contact Us
                                     </NavLink>

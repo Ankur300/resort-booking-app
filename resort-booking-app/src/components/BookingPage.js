@@ -1,10 +1,26 @@
-import React from "react";
-import images from "../images/img1.jpg";
+import React, { useState } from "react";
+import { Modal } from "react-bootstrap";
+import images from "../images/rooms.jpg";
 import rupeeicon from "../images/rupee.png";
+import BookingForm from "./BookingForm";
 
 function BookingPage() {
+    const [show, setShow] = useState(false);
+    const handleClose = () => setShow(false);
+    const handleShow = () => setShow(true);
+
     return (
         <>
+            <Modal show={show} onHide={handleClose}>
+                <Modal.Header closeButton>
+                    <Modal.Title>
+                        <h2>Booking Form</h2>
+                    </Modal.Title>
+                </Modal.Header>
+                <Modal.Body>
+                    <BookingForm />
+                </Modal.Body>
+            </Modal>{" "}
             <div className="booking_banner">
                 <div className="booking_banner_content">
                     <h1>Banner Content</h1>
@@ -24,7 +40,9 @@ function BookingPage() {
                                 <span>
                                     700 <img src={rupeeicon} alt="rupee" />
                                 </span>
-                                <button className="btn btn-primary float-end ">Book Now</button>
+                                <button className="btn btn-warning float-end " onClick={handleShow}>
+                                    Book Now
+                                </button>
                             </div>
                         </div>
                     </li>
@@ -39,7 +57,9 @@ function BookingPage() {
                                 <span>
                                     700 <img src={rupeeicon} alt="rupee" />
                                 </span>
-                                <button className="btn btn-primary float-end ">Book Now</button>
+                                <button className="btn btn-warning float-end " onClick={handleShow}>
+                                    Book Now
+                                </button>
                             </div>
                         </div>
                     </li>
@@ -54,7 +74,9 @@ function BookingPage() {
                                 <span>
                                     700 <img src={rupeeicon} alt="rupee" />
                                 </span>
-                                <button className="btn btn-primary float-end ">Book Now</button>
+                                <button className="btn btn-warning float-end " onClick={handleShow}>
+                                    Book Now
+                                </button>
                             </div>
                         </div>
                     </li>

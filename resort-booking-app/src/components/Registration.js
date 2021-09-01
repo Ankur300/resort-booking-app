@@ -3,13 +3,45 @@ import { Form, Button } from "react-bootstrap";
 import useForm from "./UseForm";
 import validation from "./validation";
 import {Link} from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 
 function Registration() {
-    const { handleChange, values, handleSubmit, errors } = useForm(validation);
+    const history = useHistory();
+
+    let { handleChange, values, handleSubmit, errors } = useForm(validation);
+
+     handleSubmit= async(e)=>{
+         e.preventDefault();
+         const {username,email,number,password,cpassword}=values;
+       const res=await fetch("/registration",{
+           method:'POST',
+         headers:{
+             "content-type":'application/json'
+         },
+         body:JSON.stringify({username,email,number,password,cpassword
+
+         })
+
+       })
+       const res1=await res.json();
+       console.log("hello" + res1)
+       if(res1.status===422 || !res1){
+           alert('invali registration');
+       }else{
+           alert("registration suceesfully")
+           history.push("/Login");
+
+       }
+
+    }
+
+    
+    
+    
     return (
         <div className="container register_container" >
             <h1>Registration</h1>
-            <Form onSubmit={handleSubmit}>
+            <Form  method="POST" onSubmit={handleSubmit}>
                 <Form.Group className="mb-3" controlId="formGroupEmail">
                     <Form.Label>Enter UserName</Form.Label>
                     <Form.Control
@@ -43,6 +75,7 @@ function Registration() {
                         type="number"
                         placeholder="Enter mobile number"
                         name="number"
+                        maxLength= "10"
                         value={values.number}
                         onChange={handleChange}
                     />
@@ -63,13 +96,13 @@ function Registration() {
                     <Form.Label> Enter confirm Password</Form.Label>
                     <Form.Control
                         type="password"
-                        name="password2"
+                        name="cpassword"
                         placeholder="Password"
-                        value={values.password2}
+                        value={values.cpassword}
                         onChange={handleChange}
                     />
                 </Form.Group>
-                {errors.password2 && <p>{errors.password2}</p>}
+                {errors.cpassword && <p>{errors.cpassword}</p>}
                 <Form.Group className="mb-3" controlId="formGroupPassword">
                     <Form.Label></Form.Label>
                     <Form.Control type="submit" value="Submit" className="btn btn-primary"/>

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import validation from "./validation";
+import {Link} from "react-router-dom";
+
 const initialvalues = {
     email: "",
     password: "",
@@ -63,6 +65,14 @@ export default function Login() {
                     Submit
                 </Button>
             </Form>
+            <h5>
+                {" "}
+                Join Us Now!{" "}
+                <Link to="/Register">
+
+                <span style={{ color: "red" }}> Register</span>
+                </Link>
+            </h5>
         </div>
     );
 }

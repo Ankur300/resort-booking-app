@@ -11,6 +11,11 @@ ul{
     margin: 0;
   }
 }
+a{
+  &:hover{
+    color: #ffa807 !important;
+  }
+}
 
 figure{
   margin: 0;
