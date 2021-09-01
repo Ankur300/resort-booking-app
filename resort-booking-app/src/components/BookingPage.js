@@ -23,7 +23,7 @@ function BookingPage() {
             </Modal>{" "}
             <div className="booking_banner">
                 <div className="booking_banner_content">
-                    <h1>Banner Content</h1>
+                    <h1>Resort Booking Rooms Section</h1>
                 </div>
             </div>
             <div className="resort_cotent container">

@@ -6,3 +6,18 @@
     background: url("../images/BookingPageBanner.jpg") no-repeat fixed bottom;
     background-size: cover;
 }
+
+form {
+    label {
+        margin-bottom: 5px;
+    }
+    .control {
+        margin-bottom: 10px;
+    }
+    input {
+        max-width: 500px;
+    }
+    button {
+        margin-top: 20px;
+    }
+}

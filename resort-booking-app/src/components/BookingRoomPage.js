@@ -3,7 +3,7 @@ import { Modal } from "react-bootstrap";
 import SingleRoom from "../images/SingleRoom.jpg";
 import SingleRoom1 from "../images/SingleRoom1.jpg";
 import SingleRoom2 from "../images/SingleRoom2.jpg";
-import BookingForm from "./BookingForm";
+import BookingForm from "./BookingForm11";
 
 function BookingRoomPage() {
     // const [titleName, SetTitleName] = useState("");

@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import Contactus from "./components/Contactus";
 import MyBookings from "./components/MyBookings";
 import BookingRoomPage from "./components/BookingRoomPage";
+import BookingConfirmationPage from "./components/BookingConfirmationPage";
 
 function ReactRouter() {
     return (
@@ -21,6 +22,7 @@ function ReactRouter() {
                     <Route exact path="/" component={HomePage} />
                     <Route exact path="/Booking" component={BookingPage} />
                     <Route exact path="/BookingRoomPage" component={BookingRoomPage} />
+                    <Route exact path="/BookingConfirmationPage" component={BookingConfirmationPage} />
                     <Route exact path="/MyBookings" component={MyBookings} />
                     <Route exact path="/Login" component={Login} />
                     <Route exact path="/Register" component={Registration} />

@@ -1,6 +1,8 @@
 import React from "react";
+import { withRouter , useHistory} from "react-router";
+import BookingConfirmationPage from "./BookingConfirmationPage";
 
-export default class BookingOkay extends React.Component {
+class BookingForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -8,26 +10,68 @@ export default class BookingOkay extends React.Component {
             name: "",
             email: "",
             showComponent: false,
-            username: "",
             number: "",
-            room: "",
-            nopeople: "",
+            nopeople: "1",
+            chIn: "",
+            chOut: "",
+            gender: "",
+            mop: "Pay at checkIn",
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+    handleChangeName = (event) => {
+        this.setState({ name: event.target.value });
+    };
+    handleChangeNumber = (event) => {
+        this.setState({ number: event.target.value });
+    };
+    handleChangeEmail = (event) => {
+        this.setState({ email: event.target.value });
+    };
+    handleChangeGender = (event) => {
+        this.setState({ gender: event.target.value });
+    };
+    handleChangeNoOfPeople = (event) => {
+        this.setState({ nopeople: event.target.value });
+    };
+    handleChangeCheckIn = (event) => {
+        this.setState({ chIn: event.target.value });
+    };
+    handleChangeCheckOut = (event) => {
+        this.setState({ chOut: event.target.value });
+    };
+    handleChangeMop = (event) => {
+        this.setState({ mop: event.target.value });
+    };
 
     handleSubmit = async (e) => {
         e.preventDefault();
+        console.log(this.state);
 
-        let values;
-        const { username, email, number, room, nopeople } = values;
-        const res = await fetch("BookingOkay", {
+        const res = await fetch("BookingForm", {
             method: "POST",
             headers: {
                 "content-type": "application/json",
             },
-            body: JSON.stringify({ username, email, number, room, nopeople }),
+
+            body: JSON.stringify({
+                name: this.state.name,
+                email: this.state.email,
+                number: this.state.number,
+                nopeople: this.state.nopeople,
+                mop: this.state.mop,
+                gender: this.state.gender,
+                chIn: this.state.chIn,
+                chOut: this.state.chOut,
+            }),
         });
+        this.props.history.push({pathname: '/BookingConfirmationPage/', state:{name: this.state.name,email: this.state.email,
+            number: this.state.number,
+            nopeople: this.state.nopeople,
+            mop: this.state.mop,
+            gender: this.state.gender,
+            chIn: this.state.chIn,
+            chOut: this.state.chOut,}});
     };
     render() {
         return (
@@ -38,6 +82,7 @@ export default class BookingOkay extends React.Component {
                         <input
                             type="text"
                             id="name"
+                            onChange={this.handleChangeName}
                             className="form-control"
                         ></input>
                     </div>
@@ -47,14 +92,25 @@ export default class BookingOkay extends React.Component {
                     type="text"
                     id="number"
                     name="number"
+                    onChange={this.handleChangeNumber}
                     className="form-control"
                 ></input>
                 <br></br>
                 <label for="email">Email Id: </label>
-                <input type="text" id="email" className="form-control"></input>
+                <input
+                    type="text"
+                    id="email"
+                    onChange={this.handleChangeEmail}
+                    className="form-control"
+                ></input>
                 <br></br>
                 <label for="gender">Gender: </label>
-                <input type="text" id="gender" className="form-control"></input>
+                <input
+                    type="text"
+                    id="gender"
+                    onChange={this.handleChangeGender}
+                    className="form-control"
+                ></input>
                 <br></br>
                 <label for="nopeople">
                     Number of people:
@@ -62,6 +118,7 @@ export default class BookingOkay extends React.Component {
                         name="nopeople"
                         id="nopeople"
                         className="form-control"
+                        onChange={this.handleChangeNoOfPeople}
                     >
                         <option option="1">1</option>
                         <option option="2">2</option>
@@ -72,15 +129,28 @@ export default class BookingOkay extends React.Component {
                 <br></br>
                 <label for="chIn">Check In:</label>
                 <br></br>
-                <input type="date" value="0000-00-00"></input>
+                <input
+                    type="date"
+                    id="chIn"
+                    onChange={this.handleChangeCheckIn}
+                ></input>
                 <br></br>
                 <label for="chOut">Check Out:</label>
                 <br></br>
-                <input type="date" value="0000-00-00"></input>
+                <input
+                    type="date"
+                    id="chOut"
+                    onChange={this.handleChangeCheckOut}
+                ></input>
                 <br></br>
                 <label for="payment">
                     Mode of payment:
-                    <select name="mop" id="mop" className="form-control">
+                    <select
+                        name="mop"
+                        id="mop"
+                        onChange={this.handleChangeMop}
+                        className="form-control"
+                    >
                         <option option="poh">Pay at checkIn</option>
                         <option option="card">Card</option>
                     </select>
@@ -93,3 +163,6 @@ export default class BookingOkay extends React.Component {
         );
     }
 }
+
+export default withRouter(BookingForm);
+// export default BookingForm;
