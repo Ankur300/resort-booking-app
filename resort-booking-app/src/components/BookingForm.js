@@ -32,9 +32,16 @@ export default class BookingOkay extends React.Component {
     render() {
         return (
             <form onSubmit={this.handleSubmit} className="container ">
-                <label for="name">Name: </label>
-                <input type="text" id="name" className="form-control"></input>
-                <br></br>
+                <div className="field">
+                    <label for="name">Name: </label>
+                    <div className="control">
+                        <input
+                            type="text"
+                            id="name"
+                            className="form-control"
+                        ></input>
+                    </div>
+                </div>
                 <label for="number">Number: </label>
                 <input
                     type="text"
