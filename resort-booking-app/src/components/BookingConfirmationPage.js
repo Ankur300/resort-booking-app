@@ -9,10 +9,10 @@ function BookingConfirmationPage() {
     return (
         <>
         <div className="container">
-
-        </div>
+            
              <h1>Welcome {namevalue}</h1>
              <h1>Welcome {numberValue}</h1>
+        </div>
         </>
     )
 }
