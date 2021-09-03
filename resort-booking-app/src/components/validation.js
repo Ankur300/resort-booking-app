@@ -15,13 +15,13 @@ export default function validation(values){
 
     if(!values.password){
         errors.password='password is required'
-    } else if(values.password.lenght<6){
+    } else if(values.password.length <6){
         errors.password="password needs to be  6 characters or more"
     }
-  if(!values.password2){
-      errors.password2="password2 is required"
-  } else if(values.password !== values.password2){
-      errors.password2="password do not  match"
+  if(!values.cpassword){
+      errors.cpassword="password2 is required"
+  } else if(values.password !== values.cpassword){
+      errors.cpassword="password do not  match"
   }
 
 

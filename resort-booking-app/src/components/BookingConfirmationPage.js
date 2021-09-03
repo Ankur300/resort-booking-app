@@ -14,7 +14,7 @@ function BookingConfirmationPage() {
                     <div className="col-sm-12 col-lg-6">
                         <h2>Person Details</h2>
                         <div clasName="customerdetails">
-                            <p>Name : {customer.name}</p>
+                            <p>Name : {customer.username}</p>
                             <p>Contact No. : {customer.number}</p>
                             <p>Email Id : {customer.email}</p>
                             <p>Gender : {customer.gender}</p>

@@ -38,7 +38,7 @@ function BookingPage() {
                                 <h3>Single Room</h3>
                                 <label>Price</label>
                                 <span>
-                                    700 <img src={rupeeicon} alt="rupee" />
+                                    400 <img src={rupeeicon} alt="rupee" />
                                 </span>
                                 <button className="btn btn-warning float-end " onClick={handleShow}>
                                     Book Now
@@ -55,7 +55,7 @@ function BookingPage() {
                                 <h3>Double Room</h3>
                                 <label>Price</label>
                                 <span>
-                                    700 <img src={rupeeicon} alt="rupee" />
+                                    550 <img src={rupeeicon} alt="rupee" />
                                 </span>
                                 <button className="btn btn-warning float-end " onClick={handleShow}>
                                     Book Now

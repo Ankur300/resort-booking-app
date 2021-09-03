@@ -1,16 +1,19 @@
 import { useState } from "react";
-import validation from "./validation";
+import validationbook from "./validationbook";
+
 const initialvalues={
     username:'',
     email:'',
     number:'',
-    password:'',
-    cpassword:''
-
+    nopeople: '',
+    mop:'',
+    gender:'',
+    chIn:'',
+    chOut:''
 }
 
 
-const useForm=()=>{
+const useBookingForm=(validationbook)=>{
     const [values,setValuse]=useState(initialvalues)
 
 
@@ -23,15 +26,16 @@ const useForm=()=>{
            [e.target.name ]:e.target.value
            
         })
-        console.log(e.target.value);
     }
 
     const handleSubmit=(e)=>{
+
         e.preventDefault()
-        seterror(validation(values))
+
+        seterror(validationbook(values))
     }
 
-    return { handleChange, values ,errors, seterror}
+    return { handleChange, values,handleSubmit,errors}
 }
 
-export default useForm
+export default useBookingForm
